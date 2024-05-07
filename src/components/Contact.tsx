@@ -4,7 +4,7 @@ import ContactList from "./ContactList";
 import { useAppDispatch } from "../app/hooks";
 import { addContact } from "../features/contactSlice";
 import type { Contact } from "../types";
-import { SideBar } from "./Sidebar";
+import SideBar from "./Sidebar";
 
 interface ContactProps {
   isSideBarOpen: boolean;
@@ -21,16 +21,16 @@ export function Contact({ isSideBarOpen }: ContactProps): JSX.Element {
   };
 
   return (
-    <div className="flex w-full">
+    <div className="flex w-full font-roboto">
       {/* Sidebar */}
-      {isSideBarOpen && <SideBar isSideBarOpen={isSideBarOpen}/>}
+      {isSideBarOpen && <SideBar />}
 
       {/* Main Content */}
-      <div className="bg-black p-2 w-full justify-center items-center">
+      <div className="bg-[rgb(24,24,24)] h-screen p-2 w-full justify-center items-center">
         {/* Navbar */}
         <div className="h-16 flex items-center justify-between mb-2">
           <button
-            className="text-center bg-white text-black px-4 py-2 rounded"
+            className="text-center bg-white text-black px-4 py-2 rounded font-roboto"
             onClick={() =>
               setIsAddContactFormVisible(!isAddContactFormVisible)
             }
@@ -40,7 +40,7 @@ export function Contact({ isSideBarOpen }: ContactProps): JSX.Element {
         </div>
 
         {/* Content */}
-        <div>
+        <div className="font-roboto">
           {!isAddContactFormVisible ? (
             <ContactList />
           ) : (

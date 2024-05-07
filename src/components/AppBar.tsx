@@ -9,8 +9,8 @@ const AppBar: React.FC<AppBarProps> = ({ setIsSideBarOpen }) => {
   return (
     <>
       <div>
-        <div className="bg-gray-800 p-5 place-content-between">
-          <div className="text-xl md:text-4xl text-white flex items-center">
+        <div className="bg-[rgb(18,18,18)] p-5 place-content-between">
+          <div className="text-xl md:text-4xl text-white font-roboto flex items-center">
             <FaBars
               className="mr-2 cursor-pointer"
               onClick={() => setIsSideBarOpen((prev) => !prev)}

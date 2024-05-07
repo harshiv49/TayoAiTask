@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Contact } from "../types";
 
 interface ContactFormProps {
@@ -22,6 +22,14 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAddContact }) => {
     });
   };
 
+  const handleStatusChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = e.target;
+    setValues({
+      ...values,
+      isActive: value === "Active" ? true : false,
+    });
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onAddContact(values);
@@ -35,7 +43,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAddContact }) => {
   };
 
   return (
-    <div className="bg-gray-800 p-6 rounded-lg">
+    <div className="bg-[rgb(40,40,40)] p-6 rounded-lg font-roboto">
       <h2 className="text-white w-full text-xl mb-4">Add Contact Form</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <input
@@ -45,8 +53,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAddContact }) => {
           placeholder="First Name"
           onChange={handleInputChange}
           required={true}
-          className="border bg-slate-800 border-gray-300 rounded-md p-2 mb-2"
-          
+          className="border bg-[rgb(40,40,40)] border-gray-950 rounded-md p-2 mb-2"
         />
         <input
           type="text"
@@ -54,9 +61,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAddContact }) => {
           value={values.lastName}
           placeholder="Last Name"
           onChange={handleInputChange}
-          className="border bg-slate-800 border-gray-300 rounded-md p-2 mb-2"
-          
-      
+          className="border bg-[rgb(40,40,40)] border-gray-950 rounded-md p-2 mb-2"
         />
         <input
           type="email"
@@ -65,11 +70,34 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAddContact }) => {
           placeholder="Email"
           onChange={handleInputChange}
           required={true}
-          className="border bg-slate-800 border-gray-300 rounded-md p-2 mb-2"
-          
-          
+          className="border bg-[rgb(40,40,40)] border-gray-950 rounded-md p-2 mb-2"
         />
-        <button type="submit" className="bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">
+        <div className="flex items-center mb-2">
+          <label className="text-white mr-2 font-roboto">Status:</label>
+          <label className="text-white mr-4 font-roboto">
+            <input
+              type="radio"
+              name="status"
+              value="Active"
+              checked={values.isActive}
+              onChange={handleStatusChange}
+              className="mr-1"
+            />
+            Active
+          </label>
+          <label className="text-white font-roboto">
+            <input
+              type="radio"
+              name="status"
+              value="Inactive"
+              checked={!values.isActive}
+              onChange={handleStatusChange}
+              className="mr-1"
+            />
+            Inactive
+          </label>
+        </div>
+        <button type="submit" className="bg-white text-black py-2 rounded-md hover:bg-blue-600 font-roboto">
           Add Contact
         </button>
       </form>

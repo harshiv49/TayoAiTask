@@ -1,6 +1,6 @@
 import LineChart from "./Line";
 import Maps from "./Maps";
-import { SideBar } from "./Sidebar";
+import SideBar from "./Sidebar";
 
 interface ChartsProps {
   isSideBarOpen: boolean;
@@ -8,14 +8,15 @@ interface ChartsProps {
 
 export default function Charts({ isSideBarOpen }: ChartsProps) {
   return (
-    <div className="flex bg-black">
-      <SideBar isSideBarOpen={isSideBarOpen} />
-      <div className="flex flex-col h-full w-full">
-        <div className="box-border h-80 w-[600px]">
-          <LineChart />
-        </div>
-        <div className="box-border h-1/2">
-          <Maps />
+    <div className="flex bg-[rgb(24,24,24)] h-screen">
+      {isSideBarOpen && <SideBar />}
+      <div className="flex flex-col w-full m-10">
+            <LineChart />
+        <div className="w-full md:w-1/2 p-2 md:p-4">
+          <div className="h-[300px] md:h-full">
+            <p className="text-3xl text-white text-center">Leaflet Map</p>
+            <Maps />
+          </div>
         </div>
       </div>
     </div>

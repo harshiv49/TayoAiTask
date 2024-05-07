@@ -1,6 +1,5 @@
-
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { addContact, deleteContact, editContact } from "../features/contactSlice";
+import {  deleteContact } from "../features/contactSlice";
 import ContactCard from "./ContactCard";
 const ContactList: React.FC = () => {
     const contacts = useAppSelector((state) => state.contact.contacts);
@@ -11,7 +10,7 @@ const ContactList: React.FC = () => {
     };
   
     return (
-      <div className="flex flex-wrap border-white">
+      <div className="flex flex-wrap">
         {contacts.map((contact) => (
           <ContactCard key={contact.id} contact={contact} onDelete={deleteContactHandler} />
         ))}

@@ -39,9 +39,9 @@ const Maps: React.FC = () => {
   if (isError) return <div>Error: Failed to fetch country data</div>;
 
   return (
-    <div>
+    <div className='mt-10'>
 
-    <MapContainer center={[0, 0]} zoom={2} style={{ height: '400px', width: '100%' }}>
+    <MapContainer center={[0, 0]} zoom={2} className='w-full md:h-[300px]'>
       <TileLayer
         noWrap={true}
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

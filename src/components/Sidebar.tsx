@@ -2,11 +2,7 @@ import React from "react";
 import { FaAddressBook, FaChartBar } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
-interface SideBarProps {
-  isSideBarOpen: boolean;
-}
-
-export const SideBar: React.FC<SideBarProps> = ({ isSideBarOpen }) => {
+const SideBar: React.FC = () => {
   const navigate = useNavigate();
 
   const handleContactsClick = () => {
@@ -18,11 +14,7 @@ export const SideBar: React.FC<SideBarProps> = ({ isSideBarOpen }) => {
   };
 
   return (
-    <div
-      className={`${
-        isSideBarOpen ? "w-2/5 md:w-1/4" : "w-1/10"
-      } bg-gray-800 transition-all duration-300 h-screen`}
-    >
+    <div className="w-1/10 bg-[rgb(18,18,18)] transition-all duration-300 h-screen font-roboto">
       <div className="flex flex-col">
         <div className="flex flex-col text-center">
           <div
@@ -45,3 +37,5 @@ export const SideBar: React.FC<SideBarProps> = ({ isSideBarOpen }) => {
     </div>
   );
 };
+
+export default SideBar;
