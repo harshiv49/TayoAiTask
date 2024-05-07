@@ -1,25 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AppBar from "./components/AppBar";
+import { Contact } from "./components/Contact";
+import Charts from "./components/Charts";
+import { QueryClient } from "react-query";
+import { QueryClientProvider } from "react-query";
+import { useState } from "react";
 
 function App() {
+  const [isSideBarOpen,setIsSideBarOpen]=useState(false);
+  const queryClient = new QueryClient();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <>
+        <BrowserRouter>
+          <div className="bg-black h-screen">
+            <Routes>
+              <Route path="/" element={<AppBar setIsSideBarOpen={setIsSideBarOpen} />}>
+                <Route index={true} element={<Contact  isSideBarOpen={isSideBarOpen}/>} />
+                <Route path="/charts" element={<Charts isSideBarOpen={isSideBarOpen}/>} />
+              </Route>
+            </Routes>
+          </div>
+        </BrowserRouter>
+      </>
+    </QueryClientProvider>
   );
 }
 
