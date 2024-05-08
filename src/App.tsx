@@ -13,7 +13,8 @@ function App() {
   const queryClient = new QueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>
+    <>
+       <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <div className=" h-screen">
           <AppBar setIsSideBarOpen={setIsSideBarOpen}/>
@@ -25,6 +26,8 @@ function App() {
         </div>
       </BrowserRouter>
     </QueryClientProvider>
+    </>
+   
   );
 }
 
