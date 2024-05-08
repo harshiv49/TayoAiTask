@@ -11,7 +11,7 @@ export default function Charts({ isSideBarOpen }: ChartsProps) {
     <div className="flex bg-[rgb(24,24,24)] h-screen">
       {isSideBarOpen && <SideBar />}
       <div className="flex flex-col w-full m-5 md:m-20">
-        <div className="md:h-[400px] w-full ">
+        <div className="md:h-[400px]  ">
             <LineChart />
           </div>
 
