@@ -32,7 +32,7 @@ const LineChart: React.FC = () => {
   return (
     <div>
       <h2 className="text-white text-3xl text-center">Line Graph</h2>
-      <div className="w-full">
+      <div className="w-[350px] md:w-[530px]">
         <Line data={chartData} />
       </div>
     </div>

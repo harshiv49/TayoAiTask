@@ -41,7 +41,7 @@ const Maps: React.FC = () => {
   return (
     <div className='mt-10'>
 
-    <MapContainer center={[0, 0]} zoom={2} className='w-full md:h-[300px]'>
+    <MapContainer center={[0, 0]} zoom={2} className='w-full md:h-[260px]'>
       <TileLayer
         noWrap={true}
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
