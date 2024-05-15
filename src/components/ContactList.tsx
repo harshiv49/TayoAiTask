@@ -12,7 +12,7 @@ const ContactList: React.FC = () => {
   return (
     <div className="flex flex-wrap">
       {contacts.length === 0 ? (
-        <div className="text-large text-white">
+        <div className="text-lg text-white">
           No contacts found. Please add some contacts via the add contact
           button.
         </div>
