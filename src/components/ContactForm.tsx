@@ -53,7 +53,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAddContact }) => {
           placeholder="First Name"
           onChange={handleInputChange}
           required={true}
-          className="border bg-[rgb(40,40,40)] border-gray-950 rounded-md p-2 mb-2"
+          className="border bg-[rgb(40,40,40)] border-gray-950 rounded-md p-2 mb-2 text-white"
         />
         <input
           type="text"
@@ -61,7 +61,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAddContact }) => {
           value={values.lastName}
           placeholder="Last Name"
           onChange={handleInputChange}
-          className="border bg-[rgb(40,40,40)] border-gray-950 rounded-md p-2 mb-2"
+          className="border bg-[rgb(40,40,40)] border-gray-950 rounded-md p-2 mb-2 text-white"
         />
         <input
           type="email"
@@ -70,7 +70,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onAddContact }) => {
           placeholder="Email"
           onChange={handleInputChange}
           required={true}
-          className="border bg-[rgb(40,40,40)] border-gray-950 rounded-md p-2 mb-2"
+          className="border bg-[rgb(40,40,40)] border-gray-950 rounded-md p-2 mb-2 text-white"
         />
         <div className="flex items-center mb-2">
           <label className="text-white mr-2 font-roboto">Status:</label>

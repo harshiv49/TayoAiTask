@@ -44,6 +44,7 @@ export function Contact({ isSideBarOpen }: ContactProps): JSX.Element {
           {!isAddContactFormVisible ? (
             <ContactList />
           ) : (
+            
             <ContactForm onAddContact={addContactHandler} />
           )}
         </div>
